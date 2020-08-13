@@ -1,0 +1,524 @@
+/**
+* CSS
+* 
+* responsive theme
+* version 0.1b
+* author JP Kelly - smallGod
+* author Ed Nacional
+* author Gregory Cadar
+* author Jeffery Vaska
+*
+*/
+
+
+
+
+/*****************************
+      BEGIN NDXZ CSS
+*****************************/
+
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: none
+}
+
+body {
+	font-size: 10px;
+	font-family: Verdana, Geneva, sans-serif; /* choose overall font - go to www.typetester.org to test sizes and see the list of safe fonts - If the user doesnt have the first one, it try the second, and goes along the list until it finds a font that the computer has installed */
+	color: #656461; /* sets the color of all type in the website except for links and other sections overwritten */
+	background-color: #ffffff; /* sets the overall background color */
+}
+
+body.section-1 { }
+body.section-2 { }
+body.section-3 { }
+
+/* LINKS */
+	
+	
+	/* colors for all links */
+	a:link { 
+	text-decoration: none; /* none = no underline, other options include line-through or overline */
+	color: #1a3147; /* sets hex color of every link - www.colorpicker.com or photoshop to find hex values */
+	
+	}
+	
+	a:active { 
+	text-decoration: none;
+	}
+	
+	/* highlights links that you have already clicked. This can be helpful for users to identify which items they have already seen*/
+	a:visited { 
+	text-decoration: none;
+	color: #1a3147; /* the color can also be changed */
+	/*background: #e0e0e0;  this changes the background of a visited link, you can also get rid of the the back ground an color and there will be no change if a link has been visited */ 
+	}
+	
+	/* sets the properties for links when mouse rolls over */
+	a:hover { 
+ 	text-decoration: none;
+	color: #f90;
+	}
+
+	/* any img that is a link */
+	a img { 
+	border: none; 
+	}
+
+/* Pre-Nav Text - Can be accessed in the Exhibit Settings - this the text that appears at the top of the menu area */
+	
+	.top-section {
+		padding-top: 0px;
+		padding-right: 0px;
+		padding-bottom: 8px;
+		/*padding-left: 25px;  matches padding left in #menu ul */
+		font-size: 10px;
+		line-height: 18px;
+		color: #656461;
+		font-weight: bold; /* can be normal */
+		font-style: normal; /* can be italic */
+		font-family: Verdana, Geneva, sans-serif;
+	}
+	.top-section a{
+		font-weight: normal; /* applies to links in the Pre Nav Text - delete or change to bold if you want Pre Nav Text links bold */
+	}
+
+
+/* MENU */
+
+
+#menu {
+/*	max-width: 225px;
+*/	 }
+
+
+
+	#menu {
+		/*width: 225px;  sets the width of your left hand bar - if you change this also change the LEFT margin in #content to match */
+		overflow: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		/*position: fixed;  this make the menu stay in place while the content section scrolls*/
+		height: 100%;
+		background-color: #ffffff; /*background color of the menu area */
+		padding-top: 25px; /* change to match the padding-top in #content if you want them to align */
+		/*padding-bottom: 25px;*/
+		/* padding-left & right can be changed in #menu ul - below */
+		font-size: 10px;
+
+	}
+	
+	/* This section controls each section made */ 
+	#menu ul {
+		list-style: none;
+		margin-top: 0px;
+		margin-right: 0px;
+		margin-bottom: 12px; /* sets the space between each section */
+		margin-left: 0px;
+		/* sets the spacing around the menu - this is normally set to match padding options in #content but can be changed seperately */
+		padding-right: 25px;
+		/*padding-left: 25px;*/
+	}
+
+	#menu ul li {
+		margin-top: 0px;
+		margin-bottom: 4px;
+	}
+	
+	/* The following sets the style for the section heading */
+	#menu ul li.section-title {
+		font-family: Verdana, Geneva, sans-serif;
+		font-style: normal; /* can be italic */
+		font-weight: bold; /* can be normal */
+		font-size: 10px;
+		padding-top: 5px;
+		padding-right: 0px;
+		/*padding-bottom: 5px;*/
+		padding-left: 0px;
+		color: #656461;
+		/* Following lines adds a line about each section */
+		/*border-top-color: #cccccc;
+		border-top-style: solid;
+		border-top-width: 1px;*/
+
+	}
+	
+@media (max-width:767px) {
+	#menu ul {
+		overflow: hidden !important;
+		padding-right: 0px !important;
+	}
+	
+	.mobile_buttons ul li a{
+		width: 100%;
+		background: #e8eaeb;
+		display: inline-block;
+		text-align: center;
+		padding: 9px 0px 11px;
+		color:#444;
+		text-decoration: none;
+		font-weight: normal;
+		font-size: 1.5em;
+		line-height: 1.5em;
+		font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+		position: relative;
+		cursor: pointer;
+		border: none;
+		background: #e8eaeb url(images/misc/button-gloss.png) repeat-x 0 -34px;
+		-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+		-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+		box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+		/*text-shadow: 0 -1px 1px rgba(0,0,0,0.28);*/
+		background: #e8eaeb url(images/misc/button-gloss.png) repeat-x 0 -34px, -moz-linear-gradient(top, rgba(255,255,255,.4) 0%, transparent 100%);
+		background: #e8eaeb url(images/misc/button-gloss.png) repeat-x 0 -34px, -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.4)), color-stop(100%,transparent));
+		border: 1px solid #d3d5d6;
+		-webkit-transition: background-color .15s ease-in-out;
+		-moz-transition: background-color .15s ease-in-out;
+		-o-transition: background-color .15s ease-in-out;
+	}
+	
+	.mobile_buttons ul li a:hover {
+		width: 100%;
+		background: #dcdedf;
+		display: inline-block;
+		text-align: center;
+		padding: 9px 0px 11px;
+		color: #000;
+		text-decoration: none;
+		font-weight: normal;
+		font-size: 1.5em;
+		line-height: 1.5em;
+		font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+		position: relative;
+		cursor: pointer;
+		border: none;
+		background: #dcdedf url(images/misc/button-gloss.png) repeat-x 0 -34px;
+		-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+		-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+		box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+		/*text-shadow: 0 -1px 1px rgba(0,0,0,0.28);*/
+		background: #dcdedf url(images/misc/button-gloss.png) repeat-x 0 -34px, -moz-linear-gradient(top, rgba(255,255,255,.4) 0%, transparent 100%);
+		background: #dcdedf url(images/misc/button-gloss.png) repeat-x 0 -34px, -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.4)), color-stop(100%,transparent));
+		border: 1px solid #d3d5d6;
+		-webkit-transition: background-color .15s ease-in-out;
+		-moz-transition: background-color .15s ease-in-out;
+		-o-transition: background-color .15s ease-in-out;
+	}
+	
+	.mobile_buttons ul li.section-title {
+		font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+		font-weight: normal;
+		font-size: 1.5em;
+		line-height: 1.5em;
+		padding-top: 5px;
+		padding-right: 0px;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		color: #656461;
+		/* Following lines adds a line graphic to each section title */
+		/*background: url("images/smallgod/section_line.png");
+		background-image: url("images/smallgod/section_line.png");*/
+		/* Following lines adds a line below each section title */
+		/*border-bottom-color: #cccccc;
+		border-bottom-style: solid;
+		border-bottom-width: 1px;*/
+
+	}
+	
+	.top-section {
+		padding-top: 0px;
+		padding-right: 0px;
+		padding-bottom: 8px;
+		/*padding-left: 25px;  matches padding left in #menu ul */
+		font-size: 1.5em;
+		line-height: 18px;
+		color: #656461;
+		font-weight: normal; /* can be normal */
+		font-style: normal; /* can be italic */
+		font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+	}
+	.top-section a{
+		font-size: 10px;
+		line-height: 18px;
+		font-style: normal; /* can be italic */
+		font-family: Verdana, Geneva, sans-serif;
+		font-weight: normal; /* applies to links in the Pre Nav Text - delete or change to bold if you want Pre Nav Text links bold */
+	}
+	
+}
+	
+	
+	/* The following selectors style the "Built with Indexhibit" on the menu */	
+		
+		#menu ul.built {
+			margin-bottom: 0;
+		}
+	
+		#menu ul.built li {
+			padding-top: 5px;
+			/*border-top-color: #cccccc;
+			border-top-style: solid;
+			border-top-width: 1px;*/
+			color: #bbbbbb;
+		}
+		
+		/* The following changes the link colors for only the "Built with Indexhibit" link */
+		#menu ul.built a {
+			color: #bbbbbb;
+		}
+		
+		#menu ul.built a:hover {
+		 	text-decoration: underline;
+			color: #390660;
+		}
+
+	/* This sets the style for Post-Nav Text which can be accessed in the Exhibit Settings */
+		
+		.bottom-section {
+			font-size: 10px;
+			color: #bbbbbb;
+			font-family: Verdana, Geneva, sans-serif;
+			font-style: normal;
+			/* margin-top: 5px;
+			padding-top: 10px;
+			border-top-color: #cccccc;
+			border-top-style: solid;
+			border-top-width: 1px; */
+		}
+
+
+/* CONTENT AREA */
+
+	#content {
+		height: 100%;
+		margin-top: 0px;
+		margin-right: 0px;
+		margin-bottom: 0px;
+		/*margin-left: 225px;  sets the space so the content starts right when the menu ends - if you change this also change the width of #menu to match */
+	    top: 0;
+	    
+	    /* sets the spacing around the content area - this is normally set to match padding options in #menu but can be changed seperately */
+		padding-top: 25px;  /* change to match the padding-top in #menu if you want them to align */
+		padding-right: 5px;
+		padding-bottom: 25px;
+		/*padding-left: 40px;*/
+	}
+	
+@media (max-width:767px) {
+	#content {
+		padding-top: 0px !important;
+	}
+}	
+	#idxz_text {
+		/*min-width:200px; max-width:300px;*/
+		padding-right: 25px;
+		margin-bottom:15px;
+	}
+
+	.container {
+		margin-bottom: 25px;
+	}
+
+	#content p { /* sets the properties for all paragraphs in the content area */
+		/*width: 600px;*/
+		margin-top: 0px;
+		margin-right: 0px;
+		margin-bottom: 20px; /* sets the space between paragraphs */
+		margin-left: 0px; 	
+	    line-height: 18px; /* use this the change the leading (space between lines) */
+	}
+
+	p { /* sets the properties for all paragraphs  */
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 5px;
+    margin-left: 0;
+	}
+	
+	#thumb-container
+	{
+		margin-left:-3px;
+	}
+
+/* HEADINGS */
+	
+	/*
+	when typing your text/descriptions follow this format to use these heading types
+	
+	<h1>This is the text i want to be a heading which</h1>
+	
+	start with h1 as your largest most important heading. you may not need all 4 but they are here if you do.
+	*/
+	
+	h1 { 
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 42.358px;
+		font-weight: normal;
+		color: #767470; /* This color overides the color set in "body". Delete this line if you want the colors of the headings to match the rest of your type */
+		margin-top: 0px;
+		padding-bottom: 10px; /* sets the spacing between the heading and paragraph below */
+	}
+	
+	h2 { 
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 26.179px;
+		font-weight: normal;
+		color: #656461; /* This color overides the color set in "body". Delete this line if you want the colors of the headings to match the rest of your type */
+		margin-top: 0px;
+		padding-bottom: 9px; /* sets the spacing between the heading and paragraph below */
+
+	}
+	
+	h3 { 
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 16.18px;
+		color: #4b4a47; /* This color overides the color set in "body". Delete this line if you want the colors of the headings to match the rest of your type */
+		font-weight: normal;
+		margin-top: 0px;
+		padding-bottom: 8px; /* sets the spacing between the heading and paragraph below */
+	}
+	
+	h4 { 
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 10px;
+		font-weight: bold;
+		color: #656461; /* This color overides the color set in "body". Delete this line if you want the colors of the headings to match the rest of your type */
+		margin-top: 3px;
+		padding-bottom: 7px; /* sets the spacing between the heading and paragraph below */
+	}
+
+/* IMAGES */
+
+	#img-container	{ 
+		margin: 0 0 20px 0; 
+		padding: 0; 
+	}
+	
+@media (max-width:767px) {
+	#img-container	{ 
+		margin: 0 0 0px 0 !important; 
+		padding: 0; 
+	}
+	
+	h1 { 
+		font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+		font-size: 42.358px;
+		font-weight: normal;
+		color: #767470; /* This color overides the color set in "body". Delete this line if you want the colors of the headings to match the rest of your type */
+		margin-top: 0px;
+		padding-bottom: 10px; /* sets the spacing between the heading and paragraph below */
+	}
+	
+	h2 { 
+		font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+		font-size: 26.179px;
+		font-weight: normal;
+		color: #656461; /* This color overides the color set in "body". Delete this line if you want the colors of the headings to match the rest of your type */
+		margin-top: 0px;
+		padding-bottom: 9px; /* sets the spacing between the heading and paragraph below */
+
+	}
+	
+	h3 { 
+		font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+		font-size: 16.18px;
+		color: #4b4a47; /* This color overides the color set in "body". Delete this line if you want the colors of the headings to match the rest of your type */
+		font-weight: normal;
+		margin-top: 0px;
+		padding-bottom: 8px; /* sets the spacing between the heading and paragraph below */
+	}
+	
+	h4 { 
+		font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+		font-size: 1.5em;
+		font-weight: normal;
+		color: #656461; /* This color overides the color set in "body". Delete this line if you want the colors of the headings to match the rest of your type */
+		margin-top: 3px;
+		padding-bottom: 7px; /* sets the spacing between the heading and paragraph below */
+	}
+}
+	
+	#img-container p	{ 
+		/*width: 400px;*/ 
+		margin: 0; 
+		padding: 0 0 12px 0;
+	}
+	
+	.nothumb img {
+		margin-top: 0px;  
+		margin-right: 0px;
+		margin-bottom: 20px;
+		margin-left: 0px;
+		border-color: #dbe2e0; /* erase the following 3 lines if you dont want borders on your images */
+		border-width: 1px; 
+		border-style:  solid;
+	}
+	
+	#once { clear: left; }
+	
+	
+/* SLIDE SHOW EXHIBITION FORMAT - Navigation */
+	
+	p.nav a {
+		background-color: #eeeeee;
+		padding-top: 3px;
+		padding-right: 9px;
+		padding-bottom: 3px;
+		padding-left: 9px;
+		font-size: 10px;
+		color: #656461;
+		font-family: Verdana, Geneva, sans-serif;
+		-moz-border-radius-bottomleft:3px;
+		-moz-border-radius-bottomright:3px;
+		-moz-border-radius-topleft:3px;
+		-moz-border-radius-topright:3px;
+		border-radius: 3px;
+	}
+	
+	p.nav a:hover {
+		background-color: #dadada;
+		color: #f90;
+	}
+	
+	p.nav span#num {
+		letter-spacing: 2px;
+		font-family: Verdana, Geneva, sans-serif;
+		font-style: normal;
+		padding-left: 20px;
+	}
+	
+	
+/* THICKBOX EXHIBITION FORMAT - Navigation */
+
+	#TB_window, #TB_caption, #TB_secondLine, #TB_window {
+		color: #656461;
+	}
+		
+	#TB_prev a:link, #TB_next a:link {
+		background-color: #eeeeee;
+		padding-top: 3px;
+		padding-right: 9px;
+		padding-bottom: 3px;
+		padding-left: 9px;
+		font-size: 10px;
+		color: #656461;
+		font-family: Verdana, Geneva, sans-serif;
+		-moz-border-radius-bottomleft:3px;
+		-moz-border-radius-bottomright:3px;
+		-moz-border-radius-topleft:3px;
+		-moz-border-radius-topright:3px;
+		border-radius: 3px;
+	}
+	
+	#TB_prev a:hover, #TB_next a:hover {
+		background-color: #dadada;
+		color: #f90;
+	}
+
+
+/*****************************
+      END NDXZ CSS
+*****************************/
